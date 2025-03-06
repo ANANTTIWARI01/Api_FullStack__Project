@@ -5,10 +5,11 @@ import { connectDb } from "./connection/Db.js"
 import cors from "cors"
 
 const port = process.env.PORT
-const app =express()
-
+const app = express();
+                                                              
 const corsOptions={
-    origin:`http://localhost:5173`,
+    origin:process.env.FRONTEND_URI,
+    credentials:true,
     methods:["GET","POST"],
     allowHeaders:["Content-Type","Authorization"]
 }

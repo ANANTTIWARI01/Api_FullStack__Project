@@ -1,26 +1,32 @@
-import Product from "../models/Product.model.js";
+import Product from "../models/productModel.js";
+
 
 export async function addProduct(req,res){
        try{
         const newProduct = new Product({...req.body});
-       //  console.log(newProduct);
+        console.log(req);
+       
             await newProduct.save()
-            res.status(201).json({message:"Product Added"})
-
+            res.status(201).send("Product Added")
        }
-       catch (err) {
-              console.error("error" ,err)        
+       catch (error) {
+              res.status(500).send({message:"Product not added",Error:error.message})       
        }
 };
+     
 
-export async function fetchProducts(req,res){
-       try{
-              const productId = req.params.id;
-              const singleProduct = await Product.findById({_id : productId})
-              res.json(singleProduct);
-              res.status(201).json({message:"Product Added"})
+export async function fetchProduct(req, res) {
+       try {
+
+         const products = await Product.find();
+         if (!products || products.length === 0) {
+           return res.status(404).json({ message: "No products found" });
+         }
+     
+         // Send back the products list
+         return res.status(200).json(products);
+       } catch (error) {
+         return res.status(500).json({ error: error.message });
        }
-       catch(error){
-              res.status(404).json({error:err,}, "failed")
-       }
-   }
+     }
+     

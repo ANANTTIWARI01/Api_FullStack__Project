@@ -68,28 +68,41 @@ function App() {
     title: "",
     description: "",
     price: "",
-    image: null // Changed from empty string to null
+    image:"",
   });
+  const [fetchData,setFetchData] =useState({})
 
   function handleChange(e) {
-    const { name, value, files } = e.target;
-    
-    // Handle file input differently
+    const { name, value } = e.target;
     setProductData((prev) => ({
       ...prev, 
-      [name]: files ? files[0] : value
+      [name]: value
     }));
   }
 
   async function addData(e) {
     e.preventDefault();
-    const formData = new formData(e.target)
-    const finalData = Object.fromEntries(formData.entries());
-    console.log(finalData)
-    const response = await instance.post("/add", finalData);
-    console.log(response);
+    try{
+      const formData= new FormData();
+       formData.append("title",productData.title)
+       formData.append("description",productData.description)
+       formData.append("price",productData.price)
+       formData.append("image",productData.image)
+       const response = await instance.post("/product/add", productData,{withCredentials:true});
+       console.log(response);
+       
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
+  async function fetchingData(){
+    const getData = await instance.get("/product/get",fetchData)
+    console.log(getData);
+    
+    setFetchData(getData.data)
+  }
 
 
   return (
@@ -125,18 +138,33 @@ function App() {
             value={productData.price} 
             onChange={handleChange}
           />
-          
-          <label htmlFor="image">Choose a file:</label>
-          <input 
-            type="file" 
-            id="image"
-            name="image" 
-            onChange={handleChange}
-            // Remove value for file input
-          />
+
+          <label htmlFor="">Image:</label>
+          <input type="file" name="image" value={productData.image} onChange={handleChange} />
           
           <button type="submit">Submit</button>
         </form>
+      </div>
+      <div>
+        <button onClick={()=>{fetchingData()}}>Get Products</button>
+             
+             
+      </div>
+      <div>
+        {fetchData.length > 0 ? (
+          fetchData.map((obj) => {
+            return (
+              <div key={obj._id}>
+                <h1>{obj.title}</h1>
+                <p>{obj.description}</p>
+                <h3>{obj.price}</h3>
+                <img src={obj.image} alt={obj.title} />
+              </div>
+            );
+          })
+        ) : (
+          <p>No products available</p>
+        )}
       </div>
     </>
   );
