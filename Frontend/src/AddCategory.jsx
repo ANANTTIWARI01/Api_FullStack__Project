@@ -40,7 +40,7 @@ function AddCategory() {
         <input type="file" name="image"  onChange={handleChange}/>
         <button type="submit">Submit</button>
       </form>
-{/* 
+
        <div>
         {
             form.map((obj)=>{
@@ -52,7 +52,7 @@ function AddCategory() {
                 )
             })
         }
-       </div> */}
+       </div>
         </>
     )
 }
