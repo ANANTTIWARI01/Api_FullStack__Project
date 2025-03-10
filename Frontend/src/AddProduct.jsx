@@ -5,12 +5,12 @@ import SingleProduct from "./SingleProduct";
 
 function AddProduct() {
   const [productData, setProductData] = useState({
-  title: "",
-  description: "",
-  price: "",
-  image: null,
-});
-const [fetchData, setFetchData] = useState({})
+    title: "",
+    description: "",
+    price: "",
+    image: null,
+  });
+  const [fetchData, setFetchData] = useState({})
 
   function handleChange(e) {
     // if (e.target.name === "image") {
@@ -28,7 +28,7 @@ const [fetchData, setFetchData] = useState({})
     //     [name]: type === "file" ? files[0] : value
     //   }));
     // }
-    const {name, value, type, files} = e.target;
+    const { name, value, type, files } = e.target;
     setProductData((prev) => ({
       ...prev,
       [name]: type === "file" ? files[0] : value
@@ -44,10 +44,10 @@ const [fetchData, setFetchData] = useState({})
       formData.append("price", productData.price)
       formData.append("image", productData.image)
       // console.log("productData", product Data);
-      const response = await instance.post("/product/add", formData, { 
+      const response = await instance.post("/product/add", formData, {
         withCredentials: true,
-        headers:{"Content-Type":"multipar/form-data"}
-       });
+        headers: { "Content-Type": "multipar/form-data" }
+      });
       console.log(response);
 
     }
@@ -60,7 +60,7 @@ const [fetchData, setFetchData] = useState({})
     try {
       const getData = await instance.get("/product/get");
       setFetchData(getData.data)
-      
+
     } catch (error) {
       console.log(error)
     }
@@ -110,8 +110,9 @@ const [fetchData, setFetchData] = useState({})
       <div>
         <button onClick={() => { fetchingData() }}>Get Products</button>
 
-
       </div>
+
+
       <div>
         {fetchData.length > 0 ? (
           fetchData.map((obj) => {
@@ -122,9 +123,9 @@ const [fetchData, setFetchData] = useState({})
                 <h3>{obj.price}</h3>
                 {/* <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" /> */}
                 <Link to={`/product/${obj._id}`}>
-                <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" />
+                  <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" />
                 </Link>
-                
+
               </div>
             );
           })
