@@ -3,6 +3,7 @@ import React from 'react'
 import instance from "../axiosconfig";
 import { Link } from "react-router-dom";
 import SingleProduct from "./SingleProduct";
+import AddProduct from "./AddProduct";
 
 
 function ShowProduct() {
@@ -53,6 +54,9 @@ function ShowProduct() {
           <p>No products available</p>
         )}
       </div>
+    </div>
+    <div>
+      <button>Add Product</button>
     </div>
     </>
   )

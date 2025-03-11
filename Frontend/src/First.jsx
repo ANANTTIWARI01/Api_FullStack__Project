@@ -6,7 +6,7 @@ function First() {
   return (
     <>
     {/* <Header/> */}
-    <AddProduct/>
+    {/* <AddProduct/> */}
     <ShowProduct/>
     {/* <Footer/> */}
     </>
