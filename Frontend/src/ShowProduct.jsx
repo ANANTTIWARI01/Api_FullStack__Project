@@ -56,7 +56,9 @@ function ShowProduct() {
       </div>
     </div>
     <div>
+      <Link to="/AddProduct">
       <button>Add Product</button>
+      </Link>
     </div>
     </>
   )
