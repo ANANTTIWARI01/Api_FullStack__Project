@@ -19,7 +19,7 @@ function ShowProduct() {
        
       useEffect(()=>{
         fetchingData()
-      },[fetchData])
+      })
 
 
   return (
