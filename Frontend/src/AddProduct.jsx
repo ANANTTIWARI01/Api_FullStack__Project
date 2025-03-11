@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SingleProduct from "./SingleProduct";
 
 function AddProduct() {
+
   const [productData, setProductData] = useState({
     title: "",
     description: "",
@@ -66,6 +67,7 @@ function AddProduct() {
     }
   }
 
+// console.log(instance);
 
   return (
     <>
@@ -123,7 +125,7 @@ function AddProduct() {
                 <h3>{obj.price}</h3>
                 {/* <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" /> */}
                 <Link to={`/product/${obj._id}`}>
-                  <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" />
+                  <img src={`https://api-fullstack-project-back.onrender.com/${obj.image}`} alt={obj.title} width="200" />
                 </Link>
 
               </div>

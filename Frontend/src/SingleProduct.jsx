@@ -10,11 +10,11 @@ function SingleProduct() {
       productFetching(id)
     }
   }, [id])
-
+  
   async function productFetching(id) {
     const response = await instance.get("/product/get/" + id)
     setProduct(response.data[0])
-
+    
     // console.log(response.data);
   }
 
@@ -23,7 +23,7 @@ function SingleProduct() {
       <h1>{product.title}</h1>
       <p>{product.description}</p>
       <h3>{product.price}</h3>
-      <img src={`http://localhost:8080${product.image}`} alt={product.title} />
+      <img src={`https://api-fullstack-project-back.onrender.com/${product.image}`} alt={product.title} />
 
     </div>
   )
