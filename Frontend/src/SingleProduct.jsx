@@ -23,7 +23,7 @@ function SingleProduct() {
       <h1>{product.title}</h1>
       <p>{product.description}</p>
       <h3>{product.price}</h3>
-      <img src={`https://api-fullstack-project-back.onrender.com${product.image}`} alt={product.title} />
+      <img src={`https://api-fullstack-project-back.onrender.com   ${product.image}`} alt={product.title} />
 
     </div>
   )

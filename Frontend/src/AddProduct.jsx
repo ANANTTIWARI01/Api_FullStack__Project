@@ -11,7 +11,6 @@ function AddProduct() {
     price: "",
     image: null,
   });
-  const [fetchData, setFetchData] = useState({})
 
   function handleChange(e) {
     // if (e.target.name === "image") {
@@ -57,84 +56,60 @@ function AddProduct() {
     }
   }
 
-  async function fetchingData() {
-    try {
-      const getData = await instance.get("/product/get");
-      setFetchData(getData.data)
 
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-// console.log(instance);
+  // console.log(instance);
 
   return (
     <>
-      <div>
-        <form
-          onSubmit={addData}
-          encType="multipart/form-data"
-        >
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={productData.title}
-            onChange={handleChange}
-          />
-
-          <label htmlFor="description">Description:</label>
-          <input
-            type="text"
-            id="description"
-            name="description"
-            value={productData.description} // Fixed typo here
-            onChange={handleChange}
-          />
-
-          <label htmlFor="price">Price:</label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            value={productData.price}
-            onChange={handleChange}
-          />
-
-          <label htmlFor="">Image:</label>
-          <input type="file" name="image" onChange={handleChange} />
-
-          <button type="submit">Submit</button>
-        </form>
+      <div className="flex justify-center items-center ">
+        <div className="">
+          <form
+            onSubmit={addData}
+            encType="multipart/form-data"
+            className="flex flex-col bg-sky-700 h-[50%] justify-center items-center"
+          >
+            <div className="flex mx-3 my-4">
+              <label htmlFor="title" className="text-3xl m-1">Title:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={productData.title}
+                onChange={handleChange}
+                className="rounded-lg border-2 border-black m-3 w-[50%]"
+              />
+            </div>
+            <div className="flex mx-3 my-4">
+              <label htmlFor="description" className="text-3xl m-1">Description:</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={productData.description} // Fixed typo here
+                onChange={handleChange}
+                className="rounded-lg border-2 border-black m-3 w-[50%]"
+              />
+            </div>
+            <div className="flex mx-3 my-4">
+              <label htmlFor="price" className="text-3xl m-1">Price:</label>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                value={productData.price}
+                onChange={handleChange}
+                className="rounded-lg border-2 border-black m-3 w-[50%]"
+              />
+            </div>
+             <div className="flex mx-5  my-4">
+            <label htmlFor="" className="text-3xl mx-3">Image:</label>
+            <input type="file" name="image" onChange={handleChange} className="rounded-lg border-2 border-black m-3 w-[50%]" />
+            </div>
+            <button type="submit" className="border-2 border-black rounded-lg">Submit</button>
+          </form>
+        </div>
       </div>
-      <div>
-        <button onClick={() => { fetchingData() }}>Get Products</button>
-      <p>fetch products</p>
-      </div>
-
-
-      <div>
-        {fetchData.length > 0 ? (
-          fetchData.map((obj) => {
-            return (
-              <div key={obj._id}>
-                <h1>{obj.title}</h1>
-                <p>{obj.description}</p>
-                <h3>{obj.price}</h3>
-                {/* <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" /> */}
-                <Link to={`/product/${obj._id}`}>
-                  <img src={`https://api-fullstack-project-back.onrender.com${obj.image}`} alt={obj.title} width="200" />
-                </Link>
-
-              </div>
-            );
-          })
-        ) : (
-          <p>No products available</p>
-        )}
-      </div>
+      
     </>
   );
 }
