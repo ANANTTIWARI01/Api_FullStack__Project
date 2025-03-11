@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from 'react'
 import instance from "../axiosconfig";
 
@@ -16,12 +16,17 @@ function ShowProduct() {
           console.log(error)
         }
       }
-    
+       
+      useEffect(()=>{
+        fetchingData()
+      },[fetchData])
+
+
   return (
     <>
     <div>
     <div>
-        <button onClick={() => { fetchingData() }}>Get Products</button>
+        {/* <button onClick={() => { fetchingData() }}>Get Products</button> */}
         <p>fetch products</p>
       </div>
 
