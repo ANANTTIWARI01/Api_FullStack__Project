@@ -125,7 +125,7 @@ function AddProduct() {
                 <h3>{obj.price}</h3>
                 {/* <img src={`http://localhost:8080${obj.image}`} alt={obj.title} width="200" /> */}
                 <Link to={`/product/${obj._id}`}>
-                  <img src={`https://api-fullstack-project-back.onrender.com/${obj.image}`} alt={obj.title} width="200" />
+                  <img src={`https://api-fullstack-project-back.onrender.com/api${obj.image}`} alt={obj.title} width="200" />
                 </Link>
 
               </div>
