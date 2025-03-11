@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import React from 'react'
 import instance from "../axiosconfig";
+import { Link } from "react-router-dom";
+import SingleProduct from "./SingleProduct";
+
 
 function ShowProduct() {
 
