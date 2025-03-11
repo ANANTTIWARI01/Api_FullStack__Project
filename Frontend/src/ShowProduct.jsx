@@ -22,7 +22,7 @@ function ShowProduct() {
        
       useEffect(()=>{
         fetchingData()
-      })
+      },[fetchData])
 
 
   return (
@@ -33,7 +33,7 @@ function ShowProduct() {
         <p>fetch products</p>
       </div>
 
-      <div>
+      <div className="flex flex-row">
         {fetchData.length > 0 ? (
           fetchData.map((obj) => {
             return (

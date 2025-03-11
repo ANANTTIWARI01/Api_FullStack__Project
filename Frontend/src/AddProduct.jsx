@@ -57,7 +57,6 @@ function AddProduct() {
 
 
   // console.log(instance);
-
   return (
     <>
       <div className="flex justify-center items-center ">
