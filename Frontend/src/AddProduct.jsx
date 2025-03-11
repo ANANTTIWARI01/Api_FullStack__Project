@@ -111,7 +111,7 @@ function AddProduct() {
       </div>
       <div>
         <button onClick={() => { fetchingData() }}>Get Products</button>
-
+      <p>fetch products</p>
       </div>
 
 
