@@ -34,7 +34,7 @@ function ShowProduct() {
         <p>fetch products</p>
       </div>
 
-      <div className="flex flex-row">
+      <div className="flex flex-row grid grid-flow-col grid-rows-4 gap-4">
         {fetchData.length > 0 ? (
           fetchData.map((obj) => {
             return (
@@ -57,7 +57,7 @@ function ShowProduct() {
     </div>
     <div>
       <Link to="/AddProduct">
-      <button>Add Product</button>
+      <button className="border-2 border-black rounded-lg p-4">Add Product</button>
       </Link>
     </div>
     </>
