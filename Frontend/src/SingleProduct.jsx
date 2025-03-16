@@ -19,11 +19,26 @@ function SingleProduct() {
   }
 
   return (
-    <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <h3>{product.price}</h3>
-      <img src={`https://api-fullstack-project-back.onrender.com${product.image}`} alt={product.title} />
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="md:flex">
+          {/* Product image */}
+          <div className="md:w-1/2">
+            <img 
+              src={`https://api-fullstack-project-back.onrender.com${product.image}`} 
+              alt={product.title} 
+              className="w-full h-96 object-contain"
+            />
+          </div>
+          
+          {/* Product details */}
+          <div className="md:w-1/2 p-6">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.title}</h1>
+            <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+            <h3 className="text-2xl font-bold text-indigo-600">${product.price}</h3>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
