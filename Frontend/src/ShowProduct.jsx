@@ -53,23 +53,23 @@ function ShowProduct() {
       <div className="flex  ">
         <div className="border-black border-solid border-r-1 w-[25%] ">
           <div className="flex flex-col text-start  p-3 ">
-          <h1 className="  text-3xl font-semibold m-3">Category</h1>
-            <Link className="m-2 text-xl ">
+          <h1 className="  text-2xl font-semibold m-3">Categories</h1>
+            <Link className="m-2 text-lg ">
               All
             </Link>
-            <Link className="m-2 text-xl">
+            <Link className="m-2 text-lg">
               Beauty
             </Link>
-            <Link className="m-2 text-xl">
+            <Link className="m-2 text-lg">
               Fragrance
             </Link>
-            <Link className="m-2 text-xl">
+            <Link className="m-2 text-lg">
               Electronics
             </Link>
-            <Link className="m-2 text-xl">
+            <Link className="m-2 text-lg">
               Groceries
             </Link>
-            <Link className="m-2 text-xl">
+            <Link className="m-2 text-lg">
               Furniture
             </Link>
           </div>
@@ -77,7 +77,7 @@ function ShowProduct() {
 
         </div>
         <div className="max-w-7xl w-[75%] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-start text-3xl font-semibold">Products</h1>
+          <h1 className="text-start text-3xl font-bold mb-6">Products</h1>
           {loading ? (
             <div className="flex justify-center items-center h-64">
               <p className="text-xl text-gray-500">Loading products...</p>
