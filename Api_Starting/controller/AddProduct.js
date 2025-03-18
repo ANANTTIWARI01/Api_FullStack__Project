@@ -1,3 +1,4 @@
+import uploadToCloudinary from "../middlewares/cloudinary.js";
 import categoryModel from "../models/category.model.js";
 import Product from "../models/productModel.js";
 
@@ -19,7 +20,10 @@ import Product from "../models/productModel.js";
 
 export async function addProduct(req, res) {
        try {
-              const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+              // const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+              const file =req.file;
+              if(!file) return res.status(404).send({message:"File Not Found"})
+               const secure_url = await uploadToCloudinary(req)
 
               const newProduct = new Product({
                      ...req.body,
