@@ -53,7 +53,7 @@ function ShowProduct() {
       <div className="flex  ">
         <div className="border-black border-solid border-r-1 w-[25%]  ">
           <div className="flex flex-col text-start  px-8 mx-6  ">
-          <h1 className="  text-2xl font-semibold m-3">Categories</h1>
+            <h1 className="  text-2xl font-semibold m-3">Categories</h1>
             <Link className="m-2 text-lg ">
               All
             </Link>
@@ -92,7 +92,7 @@ function ShowProduct() {
                   <Link to={`/product/${product._id}`} className="block">
                     <div className="h-48 overflow-hidden">
                       <img
-                        src={`https://api-fullstack-project-back.onrender.com${product.image}`}
+                        src={`${product.image}`}
                         alt={product.title}
                         className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
                       />
