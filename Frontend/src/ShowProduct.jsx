@@ -104,8 +104,8 @@ function ShowProduct() {
                         <span className="text-xl font-bold text-indigo-600">${product.price}</span>
                         <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">In Stock</span>
                       </div>
-                      <div>
-                        <Link className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 m-3 rounded-md transition duration-300">
+                      <div className="m-4 text-center">
+                        <Link className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4  rounded-md transition duration-300">
                           Add to Cart
                         </Link>
                       </div>
