@@ -39,7 +39,8 @@ function ShowProduct() {
               to="/AddProduct"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center"
             >
-              <span className="mr-3 ">+</span> Add Product
+              <span className="mr-3
+               ">+</span> Add Product
             </Link>
             <div className="flex items-center justify-around">
               <h3 className="text- xl font-semibold mx-5">Store</h3>
@@ -84,24 +85,24 @@ function ShowProduct() {
             </div>
           ) : fetchData.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {fetchData.map((product) => (
+              {fetchData?.fetchData?.map((product) => (
                 <div
-                  key={product._id}
+                  key={product?._id}
                   className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
                 >
-                  <Link to={`/product/${product._id}`} className="block">
+                  <Link to={`/product/${product?._id}`} className="block">
                     <div className="h-48 overflow-hidden">
                       <img
-                        src={`https://api-fullstack-project-back.onrender.com${product.image}`}
+                        src={`https://api-fullstack-project-back.onrender.com${product?.image}`}
                         alt={product.title}
                         className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
                       />
                     </div>
                     <div className="p-4">
-                      <h2 className="text-lg font-semibold text-gray-800 mb-1 truncate">{product.title}</h2>
-                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">{product.description}</p>
+                      <h2 className="text-lg font-semibold text-gray-800 mb-1 truncate">{product?.title}</h2>
+                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">{product?.description}</p>
                       <div className="flex items-center justify-between mt-2">
-                        <span className="text-xl font-bold text-indigo-600">${product.price}</span>
+                        <span className="text-xl font-bold text-indigo-600">${product?.price}</span>
                         <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">In Stock</span>
                       </div>
                       <div className="m-4 text-center">
