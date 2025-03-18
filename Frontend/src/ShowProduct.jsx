@@ -52,8 +52,8 @@ function ShowProduct() {
       {/* Product Grid */}
       <div className="flex  ">
         <div className="border-black border-solid border-r-1 w-[25%] ">
-          <h1 className="text-center  text-3xl font-semibold m-3">Category</h1>
-          <div className="flex flex-col text-center p-3 ">
+          <div className="flex flex-col text-start  p-3 ">
+          <h1 className="  text-3xl font-semibold m-3">Category</h1>
             <Link className="m-2 text-xl ">
               All
             </Link>
@@ -105,7 +105,7 @@ function ShowProduct() {
                         <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">In Stock</span>
                       </div>
                       <div>
-                        <Link className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">
+                        <Link className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 m-3 rounded-md transition duration-300">
                           Add to Cart
                         </Link>
                       </div>
