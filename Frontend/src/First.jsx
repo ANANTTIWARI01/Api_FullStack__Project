@@ -5,10 +5,10 @@ import ShowProduct from './ShowProduct'
 function First() {
   return (
     <>
-    {/* <Header/> */}
-    {/* <AddProduct/> */}
-    <ShowProduct/>
-    {/* <Footer/> */}
+      {/* <Header/> */}
+      {/* <AddProduct/> */}
+      <ShowProduct />
+      {/* <Footer/> */}
     </>
   )
 }

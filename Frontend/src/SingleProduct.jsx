@@ -10,11 +10,11 @@ function SingleProduct() {
       productFetching(id)
     }
   }, [id])
-  
+
   async function productFetching(id) {
     const response = await instance.get("/product/get/" + id)
     setProduct(response.data[0])
-    
+
     // console.log(response.data);
   }
 
@@ -24,13 +24,13 @@ function SingleProduct() {
         <div className="md:flex">
           {/* Product image */}
           <div className="md:w-1/2">
-            <img 
-              src={`https://api-fullstack-project-back.onrender.com${product.image}`} 
-              alt={product.title} 
+            <img
+              src={`https://api-fullstack-project-back.onrender.com${product.image}`}
+              alt={product.title}
               className="w-full h-96 object-contain"
             />
           </div>
-          
+
           {/* Product details */}
           <div className="md:w-1/2 p-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.title}</h1>

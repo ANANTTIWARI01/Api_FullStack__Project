@@ -59,7 +59,7 @@ function AddProduct() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="description" className="block text-gray-700 text-lg font-medium mb-2">Description:</label>
               <textarea
@@ -71,7 +71,7 @@ function AddProduct() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               ></textarea>
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="price" className="block text-gray-700 text-lg font-medium mb-2">Price:</label>
               <input
@@ -83,21 +83,21 @@ function AddProduct() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
-            
+
             <div className="mb-8">
               <label htmlFor="image" className="block text-gray-700 text-lg font-medium mb-2">Image:</label>
-              <input 
-                type="file" 
+              <input
+                type="file"
                 id="image"
-                name="image" 
-                onChange={handleChange} 
+                name="image"
+                onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
               />
             </div>
-            
+
             <div className="flex justify-center">
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Add Product
