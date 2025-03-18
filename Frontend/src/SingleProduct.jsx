@@ -25,7 +25,7 @@ function SingleProduct() {
           {/* Product image */}
           <div className="md:w-1/2">
             <img
-              src={`https://api-fullstack-project-back.onrender.com${product.image}`}
+              src={`${product.image}`}
               alt={product.title}
               className="w-full h-96 object-contain"
             />
