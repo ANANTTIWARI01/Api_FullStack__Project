@@ -22,7 +22,7 @@ export async function addProduct(req, res) {
        try {
               // const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
               const file =req.file;
-              if(!file) return res.status(404).send({message:"File Not Found"})
+              if(!file) return res.status(404).send({message:"File Not Found here"})
                const secure_url = await uploadToCloudinary(req)
 
               const newProduct = new Product({
