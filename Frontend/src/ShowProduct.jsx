@@ -116,7 +116,7 @@ function ShowProduct() {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center h-64 bg-white rounded-lg shadow p-6">
-              <p className="text-xl text-gray-500 mb-4">No products available</p>
+              <p className="text-xl text-gray-500 mb-4">No products available here</p>
               <Link
                 to="/AddProduct"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300"
