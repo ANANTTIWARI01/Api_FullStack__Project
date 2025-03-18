@@ -5,6 +5,7 @@ import { connectDb } from "./connection/Db.js"
 import cors from "cors";
 import path from "path"
 import { fileURLToPath } from "url"
+import cookieParser from "cookie-parser";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,14 +18,15 @@ const app = express();
 const corsOptions = {
     origin: process.env.FRONTEND_URI,
     credentials: true,
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST","DELETE","PUT","OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"]
 }
 
 app.use(cors(corsOptions))
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 connectDb()
 
 app.use("/api/product", productRouter)
