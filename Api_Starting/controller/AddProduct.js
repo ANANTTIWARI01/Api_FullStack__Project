@@ -27,7 +27,7 @@ export async function addProduct(req, res) {
 
               const newProduct = new Product({
                      ...req.body,
-                     image: imagePath,
+                     image: secure_url,
               });
               await newProduct.save();
               res.status(201).json({ message: "product added", Product: newProduct });
