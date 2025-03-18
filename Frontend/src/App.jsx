@@ -1,9 +1,9 @@
 import React from 'react'
 import First from './First'
 import AddProduct from './AddProduct'
-import SingleProduct from './SingleProduct'
+import SingleProduct from './Pages/SingleProduct'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AddCategory from './AddCategory'
+import AddCategory from './Pages/AddCategory'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,7 +20,15 @@ const router = createBrowserRouter([
   {
     path:"/product/category/add",
     element:<AddCategory/>
-  }
+  },
+  {
+    path:"/register",
+    element: <Register/>
+  },
+  {
+    path:"/login",
+    element: <Login/>
+  },
 ])
 
 function App() {

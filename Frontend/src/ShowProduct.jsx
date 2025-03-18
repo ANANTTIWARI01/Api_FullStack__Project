@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import instance from "../axiosconfig";
 import { Link } from "react-router-dom";
-import SingleProduct from "./SingleProduct";
+import SingleProduct from "./Pages/SingleProduct";
 import AddProduct from "./AddProduct";
 
 function ShowProduct() {
@@ -42,8 +42,9 @@ function ShowProduct() {
               <span className="mr-3 ">+</span> Add Product
             </Link>
             <div className="flex items-center justify-around">
-              <h3 className="text- xl font-semibold mx-5">Store</h3>
-              <h3 className="text- xl font-semibold mx-4">Cart:0</h3>
+              <Link className="text- xl font-semibold mx-5">Store</Link>
+              <Link className="text- xl font-semibold mx-4">Cart:0</Link>
+              <Link className="text- xl font-semibold mx-4">Login</Link>
             </div>
           </div>
         </div>

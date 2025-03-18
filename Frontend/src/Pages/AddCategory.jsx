@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import instance from '../axiosconfig'
+import instance from '../../axiosconfig'
 
 function AddCategory() {
     const [form,setForm] = useState({

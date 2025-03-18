@@ -1,4 +1,4 @@
-import instance from "../axiosconfig";
+import instance from "../../axiosconfig";
 import { useState } from "react";
 import SingleProduct from "./SingleProduct";
 

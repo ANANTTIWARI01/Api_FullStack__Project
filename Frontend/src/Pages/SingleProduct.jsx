@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import instance from '../axiosconfig'
+import instance from '../../axiosconfig'
 
 function SingleProduct() {
   const [product, setProduct] = useState({})
