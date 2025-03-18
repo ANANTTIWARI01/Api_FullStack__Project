@@ -39,7 +39,7 @@ function ShowProduct() {
               to="/AddProduct"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center"
             >
-              <span className="mr-2">+</span> Add Product
+              <span className="mr-3 ">+</span> Add Product
             </Link>
             <div className="flex items-center justify-around">
               <h3 className="text- xl font-semibold mx-5">Store</h3>
