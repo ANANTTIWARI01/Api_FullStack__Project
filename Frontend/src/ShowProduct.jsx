@@ -35,12 +35,12 @@ function ShowProduct() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold text-gray-900">Shopping CART</h1>
-            {/* <Link
+            <Link
               to="/AddProduct"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center"
             >
               <span className="mr-2">+</span> Add Product
-            </Link> */}
+            </Link>
             <div className="flex items-center justify-around">
               <h3 className="text- xl font-semibold mx-5">Store</h3>
               <h3 className="text- xl font-semibold mx-4">Cart:0</h3>
