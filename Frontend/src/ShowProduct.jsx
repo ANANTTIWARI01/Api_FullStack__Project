@@ -3,7 +3,7 @@ import React from 'react';
 import instance from "../axiosconfig";
 import { Link } from "react-router-dom";
 import SingleProduct from "./Pages/SingleProduct";
-import AddProduct from "./AddProduct";
+import AddProduct from "./Pages/AddProduct";
 
 function ShowProduct() {
   const [fetchData, setFetchData] = useState([]);
@@ -44,7 +44,7 @@ function ShowProduct() {
             <div className="flex items-center justify-around">
               <Link className="text- xl font-semibold mx-5">Store</Link>
               <Link className="text- xl font-semibold mx-4">Cart:0</Link>
-              <Link className="text- xl font-semibold mx-4">Login</Link>
+              <Link className="text- xl font-semibold mx-4" to="/login">Login</Link>
             </div>
           </div>
         </div>

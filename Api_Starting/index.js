@@ -6,6 +6,7 @@ import cors from "cors";
 import path from "path"
 import { fileURLToPath } from "url"
 import cookieParser from "cookie-parser";
+import userRouter from "./routes/userRouter.js";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -30,6 +31,7 @@ app.use(express.urlencoded({ extended: true }))
 connectDb()
 
 app.use("/api/product", productRouter)
+app.use("/api/user",userRouter)
 
 app.listen(port, () => {
     console.log("Server is started at " + port)

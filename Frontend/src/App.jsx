@@ -1,9 +1,11 @@
 import React from 'react'
-import First from './First'
-import AddProduct from './AddProduct'
+import First from './Pages/First'
+import AddProduct from './Pages/AddProduct'
 import SingleProduct from './Pages/SingleProduct'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AddCategory from './Pages/AddCategory'
+import Register from './Pages/Register'
+import Login from './Pages/Login'
 const router = createBrowserRouter([
   {
     path: "/",
