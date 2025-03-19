@@ -1,6 +1,7 @@
 import uploadToCloudinary from "../middlewares/cloudinary.js";
 import categoryModel from "../models/category.model.js";
-import Product from "../models/productModel.js";
+// import Product from "../models/productModel.js";
+import Product from "../models/product.model.js";
 
 
 // export async function addProduct(req, res) {

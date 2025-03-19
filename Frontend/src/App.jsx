@@ -6,39 +6,55 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AddCategory from './Pages/AddCategory'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <First />,
-    },
-    {
-      path:"/AddProduct",
-      element:<AddProduct/>
-    },
-    {
-      path:"/product/:id",
-      element:<SingleProduct/>
-  },
-  {
-    path:"/product/category/add",
-    element:<AddCategory/>
-  },
-  {
-    path:"/register",
-    element: <Register/>
-  },
-  {
-    path:"/login",
-    element: <Login/>
-  },
-])
+import ShowProduct from './ShowProduct'
+import { AuthProvider } from './context/Auth'
+
+ 
 
 function App() {
 
 
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <First />,
+      children: [
+        {
+          index: true,
+          element: <ShowProduct />
+        },
+        {
+          path: "/AddProduct",
+          element: <AddProduct />
+        },
+        {
+          path: "/product/:id",
+          element: <SingleProduct />
+        },
+        {
+          path: "/product/category/add",
+          element: <AddCategory />
+        },
+        {
+          path: "/register",
+          element: <Register />
+        },
+        {
+          path: "/login",
+          element: <Login  />
+        },]
+    }
+  
+  ])
+  
   return (
+
     <div>
-    <RouterProvider router={router} />
+       <AuthProvider>
+      <RouterProvider router={router} />
+      </AuthProvider>
     </div>
   )
 }

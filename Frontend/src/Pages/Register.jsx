@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import instance from '../axiosConfig';
+import instance from '../../axiosconfig';
 
 function Register() {
     const [passwordMatch, setPasswordMatch] = useState(true);
@@ -20,7 +20,7 @@ function Register() {
     async function handleSubmit(e) {
         try {
             e.preventDefault();
-            const response = await instance.post("./user/register", data)
+            const response = await instance.post("/user/register", data)
             console.log(response)
         } catch (error) {
             console.log(error)
@@ -61,7 +61,7 @@ function Register() {
             </form>
 
             <p>
-                Already Regstration? <NavLink to="/user/login">Login</NavLink>
+                Already Regstration? <NavLink to="/login">Login</NavLink>
             </p>
         </>
     )
