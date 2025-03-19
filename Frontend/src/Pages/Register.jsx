@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import instance from '../../axiosconfig';
 
 function Register() {
@@ -9,6 +9,8 @@ function Register() {
         email: "",
         password: "",
     })
+
+    const navigate = useNavigate();
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -21,6 +23,7 @@ function Register() {
         try {
             e.preventDefault();
             const response = await instance.post("/user/register", data)
+            navigate("/login")
             console.log(response)
         } catch (error) {
             console.log(error)
