@@ -22,7 +22,7 @@ function Register() {
     async function handleSubmit(e) {
         try {
             e.preventDefault();
-            const response = await instance.post("/user/register", data)
+            const response = await instance.post("./user/register", data)
             navigate("/login")
             console.log(response)
         } catch (error) {
