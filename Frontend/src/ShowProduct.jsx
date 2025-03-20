@@ -90,6 +90,9 @@ function ShowProduct() {
                       <h2 className="text-lg font-semibold text-gray-800 mb-1 truncate">
                         {product.title}
                       </h2>
+                      <h2 className="text-lg font-semibold text-gray-800 mb-1 truncate">
+                        {product.category}
+                      </h2>
                       <p className="text-gray-600 text-sm mb-2 line-clamp-2">{product.description}</p>
                       <div className="flex items-center justify-between mt-2">
                         <span className="text-xl font-bold text-indigo-600">${product.price}</span>

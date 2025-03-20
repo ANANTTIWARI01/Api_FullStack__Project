@@ -1,17 +1,25 @@
-import cartModel from "../models/cart.model";
+import cartModel from "../models/cart.model.js";
 
 
 export async function addToCart(req, res) {
     try {
+        // console.log(req.body.user._id);
+        if (!req.user || !req.user._id) {
+            return res.status(401).send({ message: "User not authenticated" });
+        }
+
+        console.log(req);
         const userId = req.user._id;
+        
         const { product, quantity } = req.body
 
-        let cart = new cartModel({ user: userId, items: [] })
+        let cart = new cartModel({ user: userId })
         if (!cart) {
             cart = new cartModel({ user: userId, items: [] })
         }
 
-        const existingItem = cart.items.find(items.product.toString() === product)
+        const existingItem = cart.items.find(item => item.product.toString() === product.toString());
+        
         if (existingItem) {
             existingItem.quantity += quantity
         } else {

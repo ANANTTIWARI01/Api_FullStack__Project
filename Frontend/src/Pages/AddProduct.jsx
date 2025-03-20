@@ -8,10 +8,11 @@ function AddProduct() {
     title: "",
     description: "",
     price: "",
+    category: "",
     image: null,
   });
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
   function handleChange(e) {
     const { name, value, type, files } = e.target;
@@ -29,7 +30,8 @@ function AddProduct() {
       formData.append("description", productData.description)
       formData.append("price", productData.price)
       formData.append("image", productData.image)
-      // console.log("productData", product Data);
+      formData.append("category", productData.category)
+      console.log("productData", productData.category);
       const response = await instance.post("/product/add", formData, {
         withCredentials: true,
         headers: { "Content-Type": "multipar/form-data" }
@@ -62,6 +64,18 @@ function AddProduct() {
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
+            </div>
+
+            <div className="mb-6">
+              <label htmlFor="titlecategory" className="block text-gray-700 text-lg font-medium mb-2">Category:</label>
+              <input
+                id="category"
+                name="category"
+                value={productData.category}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
             </div>
 
             <div className="mb-6">
