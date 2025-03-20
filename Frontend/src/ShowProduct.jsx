@@ -98,9 +98,9 @@ function ShowProduct() {
                         </span>
                       </div>
                       <div className="m-4 text-center">
-                        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">
+                        <Link className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300" to="/cart">
                           Add to Cart
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </Link>

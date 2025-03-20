@@ -8,8 +8,9 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import ShowProduct from './ShowProduct'
 import { AuthProvider } from './context/Auth'
+import Cart from './Pages/Cart'
 
- 
+
 
 function App() {
 
@@ -43,17 +44,22 @@ function App() {
         },
         {
           path: "/login",
-          element: <Login  />
-        },]
+          element: <Login />
+        },
+        {
+          path: "/cart",
+          element: <Cart />
+        },
+      ]
     }
-  
+
   ])
-  
+
   return (
 
     <div>
-       <AuthProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
       </AuthProvider>
     </div>
   )

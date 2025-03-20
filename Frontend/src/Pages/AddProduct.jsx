@@ -1,6 +1,7 @@
 import instance from "../../axiosconfig";
 import { useState } from "react";
 import SingleProduct from "./SingleProduct";
+import { useNavigate } from "react-router-dom";
 
 function AddProduct() {
   const [productData, setProductData] = useState({
@@ -9,6 +10,8 @@ function AddProduct() {
     price: "",
     image: null,
   });
+
+   const navigate = useNavigate()
 
   function handleChange(e) {
     const { name, value, type, files } = e.target;
@@ -32,6 +35,7 @@ function AddProduct() {
         headers: { "Content-Type": "multipar/form-data" }
       });
       console.log(response);
+      navigate("/")
     }
     catch (error) {
       console.log(error)
