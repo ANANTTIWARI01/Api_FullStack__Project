@@ -22,9 +22,9 @@ import Product from "../models/product.model.js";
 export async function addProduct(req, res) {
        try {
               // const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
-              const file =req.file;
-              if(!file) return res.status(404).send({message:"File Not Found here"})
-               const secure_url = await uploadToCloudinary(req)
+              const file = req.file;
+              if (!file) return res.status(404).send({ message: "File Not Found here" })
+              const secure_url = await uploadToCloudinary(req)
 
               const newProduct = new Product({
                      ...req.body,
@@ -36,6 +36,7 @@ export async function addProduct(req, res) {
               res.status(500).json({ message: "product not added", error: error.message })
        }
 }
+
 
 
 export async function fetchProduct(req, res) {
@@ -55,10 +56,12 @@ export async function fetchProduct(req, res) {
               return res.status(500).json({ error: error.message });
        }
 }
+
+
 export async function addCategory(req, res) {
        try {
               const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
-              
+
               const newCategory = new categoryModel({
                      ...req.body,
                      image: imagePath,
@@ -79,5 +82,42 @@ export async function fetchCategories(req, res) {
        catch (error) {
               res.status(500).send({ message: error.message });
        }
+}
+
+
+
+//This delete functionality is only for the Admin later , this function will be transfered in separate file
+// same for the category the code will be same only the category will get different
+export async function deleteProduct(req, res) {
+       try {
+              if (!req.params.id) {
+                     return res.status(400).send({ error: "Product ID is required" });
+              }
+
+              const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+
+              if (!deletedProduct) {
+                     return res.status(404).send({ error: "Product not found" });
+              }
+
+              return res.status(200).send({ message: "Product deleted successfully", product: deletedProduct });
+       } catch (error) {
+              console.log(error);
+              return res.status(500).send({ error: "Server error" });
+       }
+}
+
+
+export async function  fetchProductByCategory(req,res) {
+try {
+       const [ title ] = req.body
+       console.log(title);
+       
+} catch (error) {
+       console.log(error);
+       
+}
+
+       
 }
 
